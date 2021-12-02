@@ -6,17 +6,17 @@
 const container = document.querySelector(".container");
 
 // enables gridlike divs on HTML for the etchpad
-function createGrid(numberOfRows, numberOfColumns){
+function createGrid(numberOfColumns, numberOfRows){
 
-    for (let i = 0; i < numberOfRows; i++) {
-        const newRow = document.createElement('div');
-        newRow.setAttribute("class","box row");
-        container.appendChild(newRow);
+    for (let i = 0; i < numberOfColumns; i++) {
+        const newColumn = document.createElement('div');
+        newColumn.setAttribute("class","box column");
+        container.appendChild(newColumn);
 
-        for (let i = 0; i < numberOfColumns; i++) {
-            const newColumn = document.createElement('div');
-            newColumn.setAttribute("class","box column");
-            newRow.appendChild(newColumn);
+        for (let i = 0; i < numberOfRows; i++) {
+            const newRow = document.createElement('div');
+            newRow.setAttribute("class","box column");
+            newColumn.appendChild(newRow);
         }
     }
 }
