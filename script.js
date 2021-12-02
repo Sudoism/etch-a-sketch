@@ -10,15 +10,15 @@ function createGrid(numberOfRows, numberOfColumns){
 
     for (let i = 0; i < numberOfRows; i++) {
         const newRow = document.createElement('div');
-        newRow.setAttribute("class","row");
+        newRow.setAttribute("class","box row");
         container.appendChild(newRow);
 
         for (let i = 0; i < numberOfColumns; i++) {
             const newColumn = document.createElement('div');
-            newColumn.setAttribute("class","column");
+            newColumn.setAttribute("class","box column");
             newRow.appendChild(newColumn);
         }
     }
 }
 
-createGrid(10,2);
+createGrid(5,2);
