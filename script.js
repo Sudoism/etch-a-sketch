@@ -14,11 +14,22 @@ function createGrid(numberOfColumns, numberOfRows){
         container.appendChild(newColumn);
 
         for (let i = 0; i < numberOfRows; i++) {
-            const newRow = document.createElement('div');
-            newRow.setAttribute("class","box");
-            newColumn.appendChild(newRow);
+            const newBox = document.createElement('div');
+            newBox.setAttribute("class","box");
+            newBox.addEventListener("mouseenter", function(e){
+                e.target.className= "touched box";
+            });
+            newColumn.appendChild(newBox);
         }
     }
 }
 
-createGrid(10,5);
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", function(){
+    let touched = document.getElementsByClassName("box");
+    for(let i =0; i<touched.length; i++){
+        touched[i].className = "box";
+    }
+});
+
+createGrid(5,5);

@@ -3,6 +3,7 @@
     align-items: stretch;
     width: 350px;
     height: 350px;
+    border:1px solid black; 
 }
 
 .column {
@@ -13,8 +14,11 @@
 }
 
 .box {
-    border:1px solid black; 
     flex-grow:1;
+}
+
+.touched {
+    background-color: blue;
 }
 
 
